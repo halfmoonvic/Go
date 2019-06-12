@@ -48,7 +48,7 @@ func (p point) at(grid [][]int) (int, bool) {
 	return grid[p.i][p.j], true
 }
 
-func walk(maze [][]int, start, end point) {
+func walk(maze [][]int, start, end point) [][]int {
 	steps := make([][]int, len(maze))
 	for i := range steps {
 		steps[i] = make([]int, len(maze[i]))
@@ -83,7 +83,7 @@ func walk(maze [][]int, start, end point) {
 			}
 
 			curSteps, _ := cur.at(steps)
-			steps[next.i][next.j] = cur.at(steps) + 1
+			steps[next.i][next.j] = curSteps + 1
 			Q = append(Q, next)
 		}
 	}
@@ -101,11 +101,11 @@ func main() {
 	// 	fmt.Println()
 	// }
 
-	steps := walk(maze, point{0, 0}, point(len(maze)-1), len(maze[0]-1))
+	steps := walk(maze, point{0, 0}, point{len(maze) - 1, len(maze[0]) - 1})
 
 	for _, row := range steps {
 		for _, val := range row {
-			fmt.Printf("%d ", val)
+			fmt.Printf("%3d ", val)
 		}
 		fmt.Println()
 	}
