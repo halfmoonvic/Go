@@ -2,8 +2,7 @@ package main
 
 import (
 	"fmt"
-
-	"./mock"
+	"learngo/retriever/mock"
 )
 
 type Retriever interface {
