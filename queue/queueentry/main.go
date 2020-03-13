@@ -21,6 +21,10 @@ func main() {
 
 	// q.Push("abc")
 	// q.Push(false)
+	q.Pop()
+	fmt.Println(q.IsEmpty())
+	q.Pop()
 	fmt.Println(q)
+	fmt.Println(q.IsEmpty())
 
 }
