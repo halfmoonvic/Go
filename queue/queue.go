@@ -1,6 +1,6 @@
 package queue
 
-type Queue []int
+type Queue []interface{}
 
 // 参数 v int 即限定了 传入仅能传入 int
 func (q *Queue) Push(v int) {
@@ -12,7 +12,7 @@ func (q *Queue) Pop() int {
 	head := (*q)[0]
 	*q = (*q)[1:]
 	// head 为 interface{} 类型的变量，将 肚子里面 int 类型的值 拿出来
-	return head
+	return head.(int)
 }
 
 func (q *Queue) IsEmpty() bool {

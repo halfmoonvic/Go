@@ -1,8 +1,8 @@
 package main
 
 import (
-	"LearnGo/queue"
 	"fmt"
+	"learngo/queue"
 )
 
 func main() {
@@ -11,6 +11,8 @@ func main() {
 
 	q.Push(2)
 	q.Push(3)
+
+	fmt.Println(variable.(type))
 
 	fmt.Println(q.Pop())
 	// fmt.Println(q.Pop())
